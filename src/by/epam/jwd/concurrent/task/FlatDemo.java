@@ -7,13 +7,12 @@ public class FlatDemo {
         /*
             Students live in a flat.
             And they doing housework.
-        
             4 tasks
             2 students
-        
          */
         
-        QueueTask queueTask = new QueueTask();
+        QueueTask queueTask = QueueTaskUtil.getInstance().createQueueTask();
+
         Student student1 = new Student(queueTask, "student1");
         Student student2 = new Student(queueTask, "student2");
 

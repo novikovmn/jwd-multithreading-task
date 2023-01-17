@@ -8,10 +8,6 @@ public class Task implements Serializable{
     private static final long serialVersionUID = 1L;    
 
     private String taskName;
-    
-    public synchronized void executeTask(){
-        System.out.println(Thread.currentThread().getName() + " is executing " + "<" + taskName + ">");
-    }
 
     public Task(String taskName) {
         this.taskName = taskName;

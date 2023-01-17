@@ -1,7 +1,5 @@
 package by.epam.jwd.concurrent.task;
 
-import java.util.Queue;
-
 public class Student extends Thread {
 
     private QueueTask queueTask;
@@ -13,11 +11,11 @@ public class Student extends Thread {
 
     @Override
     public void run() {
-        
-        Queue<Task> taskQueue = queueTask.getTaskQueue();
-        while (!taskQueue.isEmpty()) {
-            taskQueue.poll().executeTask();
-        } 
+
+        while (!queueTask.isEmpty()) {
+            Task theTask = queueTask.getTask();
+            System.out.println(Thread.currentThread().getName() + " is executing " + "<" + theTask.getTaskName() + ">");
+        }
 
     }
 
