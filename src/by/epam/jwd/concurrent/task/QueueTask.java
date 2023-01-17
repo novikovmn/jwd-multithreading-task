@@ -48,7 +48,8 @@ public class QueueTask implements Serializable {
         }
     }
 
-    public boolean isEmpty() {
+     // synchronized method
+    public synchronized boolean isEmpty() {
         if (taskQueue.isEmpty()) {
             return true;
         }else{
